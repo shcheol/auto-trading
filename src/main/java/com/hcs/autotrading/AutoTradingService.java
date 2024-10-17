@@ -1,15 +1,25 @@
 package com.hcs.autotrading;
 
+import com.hcs.autotrading.decide.Decider;
+import com.hcs.autotrading.decide.Decision;
+import com.hcs.autotrading.exchange.CandleProvider;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
+@RequiredArgsConstructor
 public class AutoTradingService {
 
-	public void doAutoTrade(){
+	private final CandleProvider candleProvider;
+	private final Decider decider;
+
+	public void doAutoTrade() {
 
 		// 1. getchartdata
+		String candle = candleProvider.getCandle("KRW-BTC", 30);
 
 		// 2. buy/sell/hold 판단
+		Decision decide = decider.decide(candle);
 
 		// 3. 실제 자동 매매 진행
 
