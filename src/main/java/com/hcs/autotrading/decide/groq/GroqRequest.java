@@ -1,24 +1,36 @@
 package com.hcs.autotrading.decide.groq;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import lombok.Getter;
+
 import java.util.ArrayList;
 
 
+@Getter
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class GroqRequest {
-	public ArrayList<Message> messages = new ArrayList<>();
-	public String model;
-	public int temperature;
-	public int max_tokens;
-	public int top_p;
-	public boolean stream;
-	public ResponseFormat response_format;
-	public Object stop;
+	private final ArrayList<Message> messages = new ArrayList<>();
+	private String model = "llama3-8b-8192";
+	private int temperature = 0;
+	private int max_tokens = 1024;
+	private boolean stream = false;
+	private ResponseFormat response_format = new ResponseFormat();
 
+	@Getter
+	@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 	public static class Message {
-		public String role;
-		public String content;
+		private String role;
+		private String content;
+
+		public Message(String role, String content) {
+			this.role = role;
+			this.content = content;
+		}
 	}
 
+	@Getter
+	@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 	public static class ResponseFormat {
-		public String type;
+		private final String type = "json_object";
 	}
 }

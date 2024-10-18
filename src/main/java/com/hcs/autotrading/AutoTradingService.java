@@ -20,6 +20,7 @@ public class AutoTradingService {
 
 		// 2. buy/sell/hold 판단
 		Decision decide = decider.decide(candle);
+		System.out.println("decide = " + decide);
 
 		// 3. 실제 자동 매매 진행
 
