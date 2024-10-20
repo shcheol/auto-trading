@@ -1,2 +1,12 @@
 groq:
   api-key: ENC(VkNjp7VvZxebSJuO4N/+MINeipMAk70la1fJgLiFWPfxb5KixphUAnkAGDMBsyDIZ9ntM71F4Dy0EPoe406bNbDr1+RJxQ6H)
+  url: https://api.groq.com/openai/v1/chat/completions
+
+slack:
+  token: ENC(0V7kl88aqT3DqbH5OMN86ZIsdggDW4MojPnt1BgYk2v1YgZKzqCL0ucgTWZGkh0TG/lVzWB1lXHVprvZlo3QyeIjyqEl92ED)
+  channel: #자동매매
+
+upbit:
+  url: https://api.upbit.com
+  path:
+    candle: /v1/candles/minutes/1
