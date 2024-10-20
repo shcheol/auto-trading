@@ -19,8 +19,7 @@ public class UpbitCandleProvider implements CandleProvider {
 
 	@Override
 	public String getCandle(String market, int count) {
-
-
-		return apiExecutor.executeGetMethod(URI.create("https://api.upbit.com/v1/candles/minutes/1?count=" + count + "&market=" + market));
+		String uri = String.format("%s%s?count=%d&market=%s", upbitInfo.url(), upbitInfo.path().get("candle"),count, market);
+		return apiExecutor.executeGetMethod(URI.create(uri));
 	}
 }
