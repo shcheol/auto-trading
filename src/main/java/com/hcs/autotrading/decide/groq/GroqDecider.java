@@ -8,7 +8,6 @@ import com.hcs.autotrading.decide.Decision;
 import com.hcs.autotrading.decide.DecisionResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Component;
 
@@ -17,7 +16,6 @@ import java.net.URI;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-@EnableConfigurationProperties(GroqInfo.class)
 public class GroqDecider implements Decider {
 
 	private final ApiExecutor apiExecutor;

@@ -4,9 +4,13 @@ groq:
 
 slack:
   token: ENC(0V7kl88aqT3DqbH5OMN86ZIsdggDW4MojPnt1BgYk2v1YgZKzqCL0ucgTWZGkh0TG/lVzWB1lXHVprvZlo3QyeIjyqEl92ED)
-  channel: #자동매매
+  channel: "#자동매매"
 
 upbit:
-  url: https://api.upbit.com
+  url: https://api.upbit.com/v1
   path:
-    candle: /v1/candles/minutes/1
+    candle: /candles/minutes/1
+    account: /accounts
+    orders: /orders
+  access-key: ENC(llmx7SliF/UpdbH0aq0ZG7hOIQ+g6NlL3MMCcl3EcYmvBSjVaiSD6e6oZnTZxbhy/RjHRRtf5m4=)
+  secret-key: ENC(GSnwVWrelDlJ+Pg61UX33LTOurhIQqXxnrfZa/QDH1Vk4Q+anR1UMj4xPdvWu9SA7Fj+38WCC9s=)

@@ -6,5 +6,5 @@ import java.math.BigDecimal;
 
 public interface OrderService {
 
-    void order(String market, Decision decision, BigDecimal volume);
+    OrderResult order(String market, Decision decision, BigDecimal volume);
 }

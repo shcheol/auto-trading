@@ -5,5 +5,5 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import java.util.Map;
 
 @ConfigurationProperties(prefix = "upbit")
-public record UpbitInfo(String url, Map<String, String> path) {
+public record UpbitInfo(String url, Map<String, String> path, String accessKey, String secretKey) {
 }

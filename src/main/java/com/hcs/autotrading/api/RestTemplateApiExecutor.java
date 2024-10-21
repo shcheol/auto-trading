@@ -3,6 +3,7 @@ package com.hcs.autotrading.api;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -17,6 +18,11 @@ public class RestTemplateApiExecutor implements ApiExecutor {
 	@Override
 	public String executeGetMethod(URI uri) {
 		return restTemplate.getForObject(uri, String.class);
+	}
+
+	@Override
+	public String executeGetMethod(URI uri, HttpHeaders headers) {
+		return restTemplate.exchange(uri, HttpMethod.GET, new HttpEntity<>(headers), String.class).getBody();
 	}
 
 	@Override

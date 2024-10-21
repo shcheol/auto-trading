@@ -15,6 +15,11 @@ public class HttpClientApiExecutor implements ApiExecutor{
 	}
 
 	@Override
+	public String executeGetMethod(URI uri, HttpHeaders headers) {
+		return null;
+	}
+
+	@Override
 	public String executePostMethod(URI uri, HttpHeaders headers, String request) {
 
 		HttpRequest build = HttpRequest.newBuilder(uri)

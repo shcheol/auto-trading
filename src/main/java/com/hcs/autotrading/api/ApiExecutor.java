@@ -8,6 +8,8 @@ public interface ApiExecutor {
 
 	String executeGetMethod(URI uri);
 
+	String executeGetMethod(URI uri, HttpHeaders headers);
+
 	String executePostMethod(URI uri, HttpHeaders headers, String request);
 
 
